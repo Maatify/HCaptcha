@@ -31,16 +31,16 @@ require 'vendor/autoload.php';
 
 $secret_key = '0x0000000000000000000000000000000000000000';
 
-$turnstile = HCaptchaPublisherProValidation::getInstance($secret_key);
+$hCaptcha = HCaptchaPublisherProValidation::getInstance($secret_key);
 
 // ===== get result in array format
-$result = $turnstile->getResponse();
+$result = $hCaptcha->getResponse();
 
 // ====== get bool of validation 
-$result = $turnstile->isSuccess();
+$result = $hCaptcha->isSuccess();
 
 // ====== using maatify json on error response with json code with die and if success there is no error
-$turnstile->jsonErrors();
+$hCaptcha->jsonErrors();
 ```
 
 ### examples
@@ -83,8 +83,8 @@ $turnstile->jsonErrors();
 >   {
 >       "success": false,
 >       "response": 4000,
->       "var": "cf-turnstile-response",
->       "description": "INVALID h-captcha-response",
+>       "var": "h-captcha-response",
+>       "description": "INVALID H-captcha-response",
 >       "more_info": "{\"success\":false,\"error-codes\":[\"missing-input-response\",\"missing-input-secret\"]}",
 >       "error_details": ""
 >   }
