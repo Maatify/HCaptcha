@@ -1,6 +1,6 @@
 {  "name": "maatify/hcaptcha",
   "description": "Unofficial HCaptcha for PHP it's library for maatify.dev HCaptcha handler, known by our team",
-  "version": "1.0.0002",
+  "version": "1.0.0003",
   "type": "library",
   "keywords": [
     "PHP",

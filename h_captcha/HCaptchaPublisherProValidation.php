@@ -91,6 +91,9 @@ class HCaptchaPublisherProValidation extends HCaptchaRequestCall
             Json::Missing('h-captcha-response');
         }
         if (! $this->validate()) {
+            if(!empty($this->response['error-codes'][0])){
+                Json::Invalid('g-recaptcha-response', $this->response['error-codes'][0]);
+            }
             Json::Invalid('h-captcha-response', Json::JsonFormat($this->response));
         }
     }
