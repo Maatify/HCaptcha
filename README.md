@@ -76,18 +76,40 @@ $hCaptcha->jsonErrors();
 >   Header 400 
 > 
 >   Body:
-> 
+>
 > - on validation error
-> 
+>
 >```json
->   {
->       "success": false,
->       "response": 4000,
->       "var": "h-captcha-response",
->       "description": "INVALID H-captcha-response",
->       "more_info": "{\"success\":false,\"error-codes\":[\"missing-input-response\",\"missing-input-secret\"]}",
->       "error_details": ""
->   }
+>{
+>  "success": false,
+>  "response": 40002,
+>  "var": "captcha",
+>  "description": {
+>    "success": false,
+>    "error-codes": [
+>      "invalid-input-secret"
+>    ],
+>    "messages": []
+>  },
+>  "more_info": "invalid-input-secret",
+>  "error_details": "test:72"
+>}
+>```
+>```json
+>{
+>  "success": false,
+>  "response": 40002,
+>  "var": "captcha",
+>  "description": {
+>    "success": false,
+>    "error-codes": [
+>      "timeout-or-duplicate"
+>    ],
+>    "messages": []
+>  },
+>  "more_info": "timeout-or-duplicate",
+>  "error_details": "test:72"
+>}
 >```
 > 
 > - on missing or empty `$_POST['h-captcha-response']`
